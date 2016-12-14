@@ -1,0 +1,42 @@
+{
+  "name": "tal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "webpack -d --watch ",
+    "webpack": "webpack-dev-server --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prakash7m/TAL.git"
+  },
+  "author": "Prakash Paudel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prakash7m/TAL/issues"
+  },
+  "homepage": "https://github.com/prakash7m/TAL#readme",
+  "devDependencies": {
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "node-sass": "^4.0.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "file-loader": "^0.9.0",
+    "react-widgets": "^3.4.5"
+  }
+}
