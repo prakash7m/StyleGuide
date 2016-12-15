@@ -6,7 +6,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'src/client/public'),
         filename: 'app.bundle.js',
-        publicPath: 'src/client/public'
+        publicPath: 'src/client/public/'
     },
     module: {
         loaders: [
@@ -31,9 +31,13 @@ module.exports = {
             }, {
                 test: /\.(ttf|eot|svg)(\?v=[0-9].[0-9].[0-9])?$/,
                 loader: 'file-loader?name=[name].[ext]'
+            }, {
+                test: /\.json$/,
+                loader: 'json-loader'
             }
         ]
     },
+    devtool: "#inline-source-map",
     stats: {
         colors: true
     }

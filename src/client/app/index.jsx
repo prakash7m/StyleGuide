@@ -22,6 +22,7 @@ const AppContainer = (props) => <div><Nav/>{props.children}</div>
 ReactDom.render((
     <Router history={hashHistory}>
         <Route path="/"  component={AppContainer} >
+            <IndexRoute component={StyleGuide}/>
             <Route path="/styleguide" component={StyleGuide} />
             <Route path="quote" component={QuotePage} />
         </Route>

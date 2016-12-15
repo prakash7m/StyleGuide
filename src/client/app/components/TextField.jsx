@@ -9,10 +9,14 @@ class TextField  extends Field {
         return <div className="formfield textfield">
             <span className="fieldlabel" style={styles.labelStyles}>{this.props.fieldLabel}</span>
             <div style={styles.inputStyles}>
-                <input type="text" style={{width: '100%'}}/>
+                <input ref="inputfield" type="text" style={{width: '100%'}}/>
             </div>
             
         </div>
+    }
+
+    getValue () {
+        return this.refs.inputfield.value;
     }
 };
 
