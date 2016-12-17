@@ -31,7 +31,7 @@ class StyleGuide extends React.Component {
         }
 
         return <div className="page">
-            <h1>Style Guide</h1>
+            <h1 className="title">Style Guide</h1>
             <div className="whitebg"> 
                 {buttons}
             </div>

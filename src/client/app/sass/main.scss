@@ -166,6 +166,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .page {
     padding: 20px;
+    h1.title {
+        padding-left: 20px;
+    }
 }
 .nav {
     background-color: #82C33F;
@@ -185,11 +188,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 .fieldset {
     border: 1px solid #ccc;
-    padding: 20px 10px;
+    padding: 30px;
+    position: relative;
 }
 
 .quote-info {
     padding: 20px 10px;
     border: 1px solid #ccc;
     border-top-width: 0px;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    display: block;
+    background: rgba(0,0,0,0.2);
+    top: 0px;
+    .text-wrapper {
+        display: table;
+        height: 100%;
+        width: 100%;
+        .text {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            .textbox {
+                display: inline-block;
+                padding: 10px;
+                font-size: 12px;
+                border-radius: 4px;
+                background-color: #666;
+                border: 1px solid #666;
+                color: #fff;
+                img {
+                    float: left;
+                    width: 16px;
+                    margin-right: 5px;
+                }
+            }
+            .at {
+                float: left;
+            }
+        }
+    }
+    
 }

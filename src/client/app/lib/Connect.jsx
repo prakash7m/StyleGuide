@@ -5,16 +5,20 @@ var request = function (config) {
         axios.get(`src/client/public/data/${config.url}.json`, {
             params: config.params
         }).then(function (response) {
-            config.success && config.success(response);
+            setTimeout(function () {
+                config.success && config.success(response);
+            }, 3000)
         }).catch(function (error) {
-            config.error && config.error(error);
-        })
+            setTimeout(function () {
+                config.error && config.error(error);
+            }, 3000)
+        });
     } else {
-        axios.get(config.url, config.params).then(function (response) {
+        axios.post(config.url, config.params).then(function (response) {
             config.success && config.success(response);
         }).catch(function (error) {
             config.error && config.error(error);
-        })
+        });
     }
 }
 

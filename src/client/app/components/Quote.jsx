@@ -17,6 +17,8 @@ class Quote extends React.Component {
     render () {
         var genderData = ['Male', 'Female'];
         var yourQuote = []
+        var mask = [];
+
         if (this.state.quoteReady) {
             yourQuote = (<div className="quote-info">
                 Your Quote: {this.state.quote}
@@ -24,9 +26,16 @@ class Quote extends React.Component {
         }
 
         if (this.state.gettingQuote) {
-            yourQuote = (<div className="quote-info">
-                Getting Quote...
-            </div>)
+            // yourQuote = (<div className="quote-info">
+            //     Getting Quote...
+            // </div>)
+            mask = (
+                <div className="mask">
+                    <div className="text-wrapper">
+                        <div className="text"><span className="textbox"><img src="src/client/public/images/ring-alt.gif"/><span className="at">Getting Quote...</span></span></div>
+                    </div>
+                </div>
+            )
         }
         return (
             <div>
@@ -39,6 +48,7 @@ class Quote extends React.Component {
                             <TextField ref="income" fieldLabel="Annual Income" labelWidth="140" width="400" />
                             <Button onClick={this.onClick.bind(this)} style={{float: 'right'}} btnType="style4">Get Quote</Button>
                             <div style={{clear: 'both'}}/>
+                            {mask}
                         </div>
                         {yourQuote}
                     </td></tr></tbody></table>
@@ -65,16 +75,19 @@ class Quote extends React.Component {
                 income: income
             },
             success: function (response) {
-                setTimeout(function () {
-                    me.setState({
-                        quoteReady: true,
-                        gettingQuote: false,
-                        quote: response.data.data.quote
-                    });
-                }, 3000);
+                me.setState({
+                    quoteReady: true,
+                    gettingQuote: false,
+                    quote: "$" + response.data.data.quote
+                });
             },
             error: function (error) {
-
+                console.log(error)
+                me.setState({
+                    quoteReady: true,
+                    gettingQuote: false,
+                    quote: error.toString()
+                });
             }
         })
     }
