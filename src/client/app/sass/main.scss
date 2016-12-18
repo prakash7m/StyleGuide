@@ -129,6 +129,17 @@ h1, h2, h3, h4, h5, h6 {
         color: #292F36;
         letter-spacing: 0.5pt;
     }
+    table {
+        margin: 0px;
+        padding: 0px;
+    }
+    table td {
+        vertical-align: top;
+    }
+    .error {
+        font-size: 11px;
+        color: #ff0000;
+    }
 }
 .textfield {
     input {
